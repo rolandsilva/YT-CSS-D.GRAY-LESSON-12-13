@@ -10,6 +10,16 @@ body {
     font-family: "Roboto", sans-serif;
     font-size: 1.5rem;
     min-height: 200vh;
+    margin: 0 10px 0 10px;
+}
+
+h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 5px 0 10px 0;
+    padding: 5px;
+    background-color: rgb(43, 173, 199);
+    border: 1px solid black;
 }
 
 .outer-container {
