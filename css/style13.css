@@ -10,7 +10,7 @@ body {
     font-family: "Roboto", sans-serif;
     font-size: 1.5rem;
     min-height: 200vh;
-    margin: 0 10px 0 10px;
+    /* margin: 0 10px 0 10px; */
 }
 
 h1 {
@@ -32,9 +32,13 @@ h1 {
 
 .outer-container p.p-outer-container {
     position: absolute;
-    left: 675px;
+    left: 80%;
+    top: 1%;
+    /* position: relative; */
+    /* left: 675px; */
     /* text-align: end; */
     background-color: aqua;
+    z-index: 2;
 }
 
 .inner-container {
@@ -45,21 +49,14 @@ h1 {
     position: relative;
 }
 
-/* .p-outer-container {
-    position: absolute;
-} */
-
-/* .p-inner-container {
-    position: absolute;
-    text-align: end;
-    background-color: aqua;
-    border: 1px solid red;
-} */
-
 .inner-container p.p-inner-container {
     position: absolute;
-    left: 285px;
+    left: 62%;
+    top: 1%;
+    /* position: relative; */
+    /* left: 285px; */
     background-color: aqua;
+    z-index: 2;
     /* text-align: end; */
 }
 
@@ -76,17 +73,26 @@ h1 {
     /* position: static; */
     /* this is a reset */
     /* position: absolute; */
-    position: relative;
+    position: absolute;
     top: 0px;
-    left: 100px;
+    left: 20px;
 }
 
 .relative {
     /* in flow, positioned relative to static position in flow */
     background-color: orange;
     position: relative;
+    /* top: 100px; */
     top: 0px;
-    left: 0px;
+    left: 200px;
+}
+
+.sticky {
+    /* in flow, like relative (positioned relative to static position in flow) until hits position, then acts like fixed (not in flow, positioned relative to viewport)  */
+    background-color: lightblue;
+    position: sticky;
+    top: 0px;
+    /* top: 500px; */
 }
 
 .fixed {
@@ -94,11 +100,64 @@ h1 {
     background-color: green;
     position: fixed;
     top: 775px;
+    top: 775px;
+    left: 400px;
 }
 
-.sticky {
-    /* in flow, like relative (positioned relative to static position in flow) until hits position, then acts like fixed (not in flow, positioned relative to viewport)  */
-    background-color: lightblue;
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    height: 100vh;
+}
+
+.blue {
+    background-color: #00f;
+}
+
+.red {
+    background-color: #f00;
+}
+
+.green {
+    background-color: green;
+}
+
+header,
+footer {
+    color: #fff;
+    text-align: center;
+    height: 100px;
+}
+
+header {
+    font-size: 5rem;
     position: sticky;
-    top: 500px;
+    top: 0;
+}
+
+footer {
+    font-size: 3rem;
+    background-color: #333;
+    /* position: fixed; */
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+a:visited {
+    color: #fff;
+}
+
+.social {
+    color: #fff;
+    background-color: royalblue;
+    font-size: inherit;
+    padding: 1rem;
+    position: fixed;
+    top: 30%;
+    left: 0;
+    z-index: 1;
+
 }
